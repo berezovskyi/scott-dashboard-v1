@@ -1,39 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <oslc4j_tc:Toolchain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oslc4j_ai="http://org.eclipse.lyo/oslc4j/adaptorInterface" xmlns:oslc4j_tc="http://org.eclipse.lyo/oslc4j/toolChain">
-  <adaptorInterfaces name="Robot1" javaClassBaseNamespace="your.basepackage.name" javaFilesBasePath="../adaptorInterface1/src/main/java/" jspFilesBasePath="../adaptorInterface1/src/main/webapp/" javascriptFilesBasePath="../adaptorInterface1/src/main/webapp/">
+  <adaptorInterfaces name="Robot1" javaClassBaseNamespace="se.kth.vis" javaFilesBasePath="../robot1-adaptor-webapp/src/main/java/" jspFilesBasePath="../robot1-adaptor-webapp/src/main/webapp/" javascriptFilesBasePath="../robot1-adaptor-webapp/src/main/webapp/">
     <serviceProviderCatalog title="Service Provider Catalog" description="Service Provider Catalog">
       <serviceProviders title="Service Provider" description="Service Provider">
-        <services domainSpecification="//@specification/@domainSpecifications.0">
-          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.1 //@specification/@domainSpecifications.0/@resources.4"/>
+        <services domainSpecification="//@specification/@domainSpecifications.0" serviceNamespace="independantOfServiceProvider">
+          <queryCapabilities title="QueryCapability1" label="QueryCapability1" queryBaseURI="query" resourceTypes="//@specification/@domainSpecifications.0/@resources.1"/>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.1"/>
+        </services>
+        <services domainSpecification="//@specification/@domainSpecifications.0" serviceNamespace="independantOfServiceProvider">
+          <queryCapabilities title="QueryCapability1" label="QueryCapability1" queryBaseURI="query" resourceTypes="//@specification/@domainSpecifications.0/@resources.4"/>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.4"/>
         </services>
       </serviceProviders>
     </serviceProviderCatalog>
     <specification/>
     <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor"/>
   </adaptorInterfaces>
-  <adaptorInterfaces name="Planner" javaClassBaseNamespace="your.basepackage.name" javaFilesBasePath="../adaptorInterface2/src/main/java/" jspFilesBasePath="../adaptorInterface2/src/main/webapp/" javascriptFilesBasePath="../adaptorInterface2/src/main/webapp/">
+  <adaptorInterfaces name="Planner" javaClassBaseNamespace="se.kth.vis" javaFilesBasePath="../planner-adaptor-webapp/src/main/java" jspFilesBasePath="../planner-adaptor-webapp/src/main/webapp" javascriptFilesBasePath="../planner-adaptor-webapp/src/main/webapp">
     <serviceProviderCatalog title="Service Provider Catalog" description="Service Provider Catalog">
       <serviceProviders title="Service Provider" description="Service Provider">
-        <services domainSpecification="//@specification/@domainSpecifications.0">
-          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.2 //@specification/@domainSpecifications.0/@resources.3"/>
+        <services domainSpecification="//@specification/@domainSpecifications.0" serviceNamespace="independantOfServiceProvider">
+          <queryCapabilities title="QueryCapability1" label="QueryCapability1" queryBaseURI="query" resourceTypes="//@specification/@domainSpecifications.0/@resources.3"/>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.3"/>
+        </services>
+        <services domainSpecification="//@specification/@domainSpecifications.0" serviceNamespace="independantOfServiceProvider">
+          <queryCapabilities title="QueryCapability1" label="QueryCapability1" queryBaseURI="query" resourceTypes="//@specification/@domainSpecifications.0/@resources.2"/>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.2"/>
         </services>
       </serviceProviders>
     </serviceProviderCatalog>
     <specification/>
     <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor"/>
   </adaptorInterfaces>
-  <adaptorInterfaces name="Robot2" javaClassBaseNamespace="your.basepackage.name" javaFilesBasePath="../adaptorInterface1/src/main/java/" jspFilesBasePath="../adaptorInterface1/src/main/webapp/" javascriptFilesBasePath="../adaptorInterface1/src/main/webapp/">
+  <adaptorInterfaces name="Robot2" javaClassBaseNamespace="se.kth.vis" javaFilesBasePath="../robot2-adaptor-webapp/src/main/java/" jspFilesBasePath="../robot2-adaptor-webapp/src/main/webapp/" javascriptFilesBasePath="../robot2-adaptor-webapp/src/main/webapp/">
     <serviceProviderCatalog title="Service Provider Catalog" description="Service Provider Catalog">
       <serviceProviders title="Service Provider" description="Service Provider">
-        <services domainSpecification="//@specification/@domainSpecifications.0">
-          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.1 //@specification/@domainSpecifications.0/@resources.4"/>
+        <services domainSpecification="//@specification/@domainSpecifications.0" serviceNamespace="independantOfServiceProvider">
+          <queryCapabilities title="QueryCapability1" label="QueryCapability1" queryBaseURI="query" resourceTypes="//@specification/@domainSpecifications.0/@resources.1"/>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.1"/>
+        </services>
+        <services domainSpecification="//@specification/@domainSpecifications.0" serviceNamespace="independantOfServiceProvider">
+          <queryCapabilities title="QueryCapability1" label="QueryCapability1" queryBaseURI="query" resourceTypes="//@specification/@domainSpecifications.0/@resources.4"/>
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.4"/>
         </services>
       </serviceProviders>
     </serviceProviderCatalog>
     <specification/>
     <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor"/>
   </adaptorInterfaces>
-  <adaptorInterfaces name="Dashboard" javaClassBaseNamespace="your.basepackage.name" javaFilesBasePath="../adaptorInterface4/src/main/java/" jspFilesBasePath="../adaptorInterface4/src/main/webapp/" javascriptFilesBasePath="../adaptorInterface4/src/main/webapp/">
+  <adaptorInterfaces name="Dashboard" javaClassBaseNamespace="se.kth.vis" javaFilesBasePath="../dashboard-adaptor-webapp/src/main/java/" jspFilesBasePath="../dashboard-adaptor-webapp/src/main/webapp" javascriptFilesBasePath="../dashboard-adaptor-webapp/src/main/webapp">
     <serviceProviderCatalog title="Service Provider Catalog" description="Service Provider Catalog">
       <serviceProviders title="Service Provider" description="Service Provider">
         <services domainSpecification="//@specification/@domainSpecifications.0">
@@ -42,11 +57,11 @@
       </serviceProviders>
     </serviceProviderCatalog>
     <specification/>
-    <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor" servicedResources="//@specification/@domainSpecifications.0/@resources.2 //@specification/@domainSpecifications.0/@resources.4 //@specification/@domainSpecifications.0/@resources.3 //@specification/@domainSpecifications.0/@resources.1 //@specification/@domainSpecifications.0/@resources.0"/>
+    <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor" servicedResources="//@specification/@domainSpecifications.0/@resources.2 //@specification/@domainSpecifications.0/@resources.4 //@specification/@domainSpecifications.0/@resources.3 //@specification/@domainSpecifications.0/@resources.1"/>
   </adaptorInterfaces>
   <specification>
     <domainSpecifications name="Warehouse" namespaceURI="http://your.organisation.domain/nsp1#" namespacePrefix="//@specification/@domainPrefixes.0">
-      <resources name="Actions" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.0 //@specification/@domainSpecifications.0/@resourceProperties.1 //@specification/@domainSpecifications.0/@resourceProperties.5 //@specification/@domainSpecifications.0/@resourceProperties.10 //@specification/@domainSpecifications.0/@resourceProperties.11 //@specification/@domainSpecifications.0/@resourceProperties.12"/>
+      <resources name="Action" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.0 //@specification/@domainSpecifications.0/@resourceProperties.1 //@specification/@domainSpecifications.0/@resourceProperties.5 //@specification/@domainSpecifications.0/@resourceProperties.10 //@specification/@domainSpecifications.0/@resourceProperties.11 //@specification/@domainSpecifications.0/@resourceProperties.12"/>
       <resources name="Robot" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.6 //@specification/@domainSpecifications.0/@resourceProperties.2 //@specification/@domainSpecifications.0/@resourceProperties.3 //@specification/@domainSpecifications.0/@resourceProperties.4 //@specification/@domainSpecifications.0/@resourceProperties.13 //@specification/@domainSpecifications.0/@resourceProperties.14"/>
       <resources name="Plan" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.7 //@specification/@domainSpecifications.0/@resourceProperties.8"/>
       <resources name="Planned Action" extends="//@specification/@domainSpecifications.0/@resources.0"/>
