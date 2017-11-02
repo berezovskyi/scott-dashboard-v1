@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oslc4j_tc:Toolchain xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oslc4j_ai="http://org.eclipse.lyo/oslc4j/adaptorInterface" xmlns:oslc4j_tc="http://org.eclipse.lyo/oslc4j/toolChain">
+  <adaptorInterfaces name="Robot1" javaClassBaseNamespace="your.basepackage.name" javaFilesBasePath="../adaptorInterface1/src/main/java/" jspFilesBasePath="../adaptorInterface1/src/main/webapp/" javascriptFilesBasePath="../adaptorInterface1/src/main/webapp/">
+    <serviceProviderCatalog title="Service Provider Catalog" description="Service Provider Catalog">
+      <serviceProviders title="Service Provider" description="Service Provider">
+        <services domainSpecification="//@specification/@domainSpecifications.0">
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.1 //@specification/@domainSpecifications.0/@resources.4"/>
+        </services>
+      </serviceProviders>
+    </serviceProviderCatalog>
+    <specification/>
+    <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor"/>
+  </adaptorInterfaces>
+  <adaptorInterfaces name="Planner" javaClassBaseNamespace="your.basepackage.name" javaFilesBasePath="../adaptorInterface2/src/main/java/" jspFilesBasePath="../adaptorInterface2/src/main/webapp/" javascriptFilesBasePath="../adaptorInterface2/src/main/webapp/">
+    <serviceProviderCatalog title="Service Provider Catalog" description="Service Provider Catalog">
+      <serviceProviders title="Service Provider" description="Service Provider">
+        <services domainSpecification="//@specification/@domainSpecifications.0">
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.2 //@specification/@domainSpecifications.0/@resources.3"/>
+        </services>
+      </serviceProviders>
+    </serviceProviderCatalog>
+    <specification/>
+    <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor"/>
+  </adaptorInterfaces>
+  <adaptorInterfaces name="Robot2" javaClassBaseNamespace="your.basepackage.name" javaFilesBasePath="../adaptorInterface1/src/main/java/" jspFilesBasePath="../adaptorInterface1/src/main/webapp/" javascriptFilesBasePath="../adaptorInterface1/src/main/webapp/">
+    <serviceProviderCatalog title="Service Provider Catalog" description="Service Provider Catalog">
+      <serviceProviders title="Service Provider" description="Service Provider">
+        <services domainSpecification="//@specification/@domainSpecifications.0">
+          <basicCapabilities resourceTypes="//@specification/@domainSpecifications.0/@resources.1 //@specification/@domainSpecifications.0/@resources.4"/>
+        </services>
+      </serviceProviders>
+    </serviceProviderCatalog>
+    <specification/>
+    <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor"/>
+  </adaptorInterfaces>
+  <adaptorInterfaces name="Dashboard" javaClassBaseNamespace="your.basepackage.name" javaFilesBasePath="../adaptorInterface4/src/main/java/" jspFilesBasePath="../adaptorInterface4/src/main/webapp/" javascriptFilesBasePath="../adaptorInterface4/src/main/webapp/">
+    <serviceProviderCatalog title="Service Provider Catalog" description="Service Provider Catalog">
+      <serviceProviders title="Service Provider" description="Service Provider">
+        <services domainSpecification="//@specification/@domainSpecifications.0">
+          <basicCapabilities/>
+        </services>
+      </serviceProviders>
+    </serviceProviderCatalog>
+    <specification/>
+    <requiredAdaptors xsi:type="oslc4j_ai:GenericRequiredAdaptor" serviceProviderCatalogURI="http://your.host.com/adaptor/services/catalog/singleton" name="GenericRequiredAdaptor" servicedResources="//@specification/@domainSpecifications.0/@resources.2 //@specification/@domainSpecifications.0/@resources.4 //@specification/@domainSpecifications.0/@resources.3 //@specification/@domainSpecifications.0/@resources.1 //@specification/@domainSpecifications.0/@resources.0"/>
+  </adaptorInterfaces>
+  <specification>
+    <domainSpecifications name="Warehouse" namespaceURI="http://your.organisation.domain/nsp1#" namespacePrefix="//@specification/@domainPrefixes.0">
+      <resources name="Task" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.0 //@specification/@domainSpecifications.0/@resourceProperties.1 //@specification/@domainSpecifications.0/@resourceProperties.5"/>
+      <resources name="Robot" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.4 //@specification/@domainSpecifications.0/@resourceProperties.6 //@specification/@domainSpecifications.0/@resourceProperties.2 //@specification/@domainSpecifications.0/@resourceProperties.3"/>
+      <resources name="Goal" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.7 //@specification/@domainSpecifications.0/@resourceProperties.8"/>
+      <resources name="Planned Task" extends="//@specification/@domainSpecifications.0/@resources.0"/>
+      <resources name="Performed Task" extends="//@specification/@domainSpecifications.0/@resources.0" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.9"/>
+      <resourceProperties name="startTime" valueType="Integer"/>
+      <resourceProperties name="endTime" valueType="Integer"/>
+      <resourceProperties name="type" valueType="String"/>
+      <resourceProperties name="batteryLevel" valueType="Integer"/>
+      <resourceProperties name="activityState" valueType="String" description="">
+        <allowedValue>idle</allowedValue>
+        <allowedValue>active</allowedValue>
+      </resourceProperties>
+      <resourceProperties name="complete"/>
+      <resourceProperties name="performs" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.4"/>
+      <resourceProperties name="has" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.3"/>
+      <resourceProperties name="performedBy" occurs="zeroOrMany" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.1"/>
+      <resourceProperties name="realizes" valueType="Resource" range="//@specification/@domainSpecifications.0/@resources.3"/>
+    </domainSpecifications>
+    <domainSpecifications name="" namespaceURI="http://your.organisation.domain/nsp2#" namespacePrefix="//@specification/@domainPrefixes.1">
+      <resources name="Resource1" resourceProperties="//@specification/@domainSpecifications.0/@resourceProperties.5 //@specification/@domainSpecifications.0/@resourceProperties.9"/>
+    </domainSpecifications>
+    <domainPrefixes name="nsp1"/>
+    <domainPrefixes name="nsp2"/>
+  </specification>
+</oslc4j_tc:Toolchain>
